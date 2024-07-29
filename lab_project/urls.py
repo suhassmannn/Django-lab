@@ -21,6 +21,9 @@ from labapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
+    path('currentDT/',views.cdt),
+    path('ahead/',views.aheadtime),
+    path('fruits/',views.fruit_student),
     path('contactus/',views.contactus),
     path('aboutus/',views.aboutus),
     path('home/',views.home),

@@ -5,6 +5,25 @@ from labapp.models import course, projectForm, student
 import csv
 from reportlab.lib.pagesizes import letter 
 from reportlab.platypus import SimpleDocTemplate, Table
+from django.shortcuts import render 
+import datetime
+from django.http import HttpResponse # Create your views here.
+
+def cdt(request): 
+    dt=datetime.datetime.now()
+    resp="<h1>Current Date and Time is %s<h1>"%(dt) 
+    return HttpResponse(resp)
+
+def aheadtime(request): 
+    dt=datetime.datetime.now()+datetime.timedelta(hours=4) 
+    resp="<html><head><title>Current Time Ahead by 4hrs</title></head><body><h1>Current date and Time ahead by 4 hrs is %s</h1></body></html>"%(dt) 
+    return HttpResponse(resp)
+
+def fruit_student(request):
+    fruitlist=['Banana','Apple','Mango','Kiwi','Orange']
+    studentlist=['Sumit','Mansoor','Suhaas','Priya','Supritha']
+    return render(request,'fruit_student.html',{'fruitlist':fruitlist,'studentlist':sorted(studentlist)})
+
 
 def home(request):
     return render(request,'home.html')

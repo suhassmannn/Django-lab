@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#a1{background-color: lightblue;color:brown} #a2{background-color:blue;color:yellow}
+</style>
+<title>
+Unordered Fruits and Ordered Students
+</title>
+</head>
+<body>
+<h1 id="a1">Unordered List of Fruits</h1>
+<ul>
+{% for fruit in fruitlist %}
+<li>{{fruit}}</li>
+{% endfor %}
+</ul>
+<h1 id="a2">Ordered List of Students Selected for an Event</h1>
+<ol>
+{% for student in studentlist %}
+<li>{{student}}</li>
+{% endfor %}
+</ol>
+</body>
+</html>
